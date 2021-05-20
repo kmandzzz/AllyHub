@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  animation: type 3s steps(18);
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid darkblue;
+  width: 18ch;
+  color: darkblue;
+}
+
+@keyframes type {
+  0% {
+    width: 0ch;
+  }
+  100% {
+    width: 18ch;
+  }
+}
+
+.container {
+  width: 1024px;
+  padding: 50px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+form label {
+  width: 20%;
+  display: inline-block;
+  font-family: "Open Sans";
+  font-size: 18px;
+  color: #555555;
+  line-height: 1.5;
+}
+
+form input,
+form textarea {
+  width: 80%;
+  padding: 0 28px;
+  margin-top: 15px;
+  display: block;
+  width: 100%;
+  background: white;
+  border-radius: 2px;
+  font-family: "Open Sans";
+  font-size: 15px;
+  color: black;
+  line-height: 1.2;
+  padding: 0 28px;
+  margin-top: 10px;
+  outline: none;
+  border: ridge;
+}
+form input:focus {
+  background: rgba(255, 255, 255, 0.87);
+}
+form div {
+  padding: 5px;
+  display: flex;
+  align-items: start;
+}
+
+label {
+  padding: 0 28px;
+  margin-top: 15px;
+}
+
+.button {
+  justify-content: right;
+}
+
+button {
+  background-color: #4ca1a3;
+  padding: 5px;
+  cursor: pointer;
+  margin-left: 90%;
+  border-radius: 15px;
+  border: none;
+}
+button:hover {
+  background-color: #1eae98;
+  border: 2px solid white;
+  color: white;
+  transition: all 0.5s ease-in;
+  transition-delay: 0.05s;
+}
+button:hover::after {
+  font-family: "FontAwesome";
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-ligatures: normal;
+  text-rendering: auto;
+}
+input[type="search"] {
+  width: 50%;
+  border-radius: 12px;
+}
+
+table {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+table thead {
+  color: white;
+}
+
+footer {
+  background: #00008b;
+  position: flex;
+  min-width: 100%;
+  text-align: center;
+  margin-top: 350px;
+  padding: 2rem 0 2rem;
+  color: #fff;
+}
+
+p {
+  margin-top: 0.3rem;
+}
+
+a {
+  color: #4fec6a;
+  text-decoration: none;
+  font-weight: bold;
+}

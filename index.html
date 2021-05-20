@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-app="desafio">
+<html lang="pt-br">
+  <head>
+     <title>AllyHub - Cadastro de Cursos</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="shortcut icon" href="/img/ally-icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="/script.js"></script>
+</head>
+  <body ng-controller="CursoController as cursoController">
+    <div class="container">
+      <div class="logo">
+        <img src="/img/Logo.png" alt="logo-Ally" />
+      </div>
+      <div>
+                <h1 class="title">Cadastro de Cursos</h1>
+        <form ng-submit="cursoController.addCurso()">
+          <div class="cadastro-form">
+            
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" ng-model="cursoController.nome" required placeholder="Insira o nome do curso"  />
+          </div>
+          <div>
+            <label for="dataInicio">Data de Início:</label>
+            <input type="date" id="dataInicio" ng-model="cursoController.dataInicio" required />
+          </div>
+          <div>
+            <label for="dataFim">Data de Conclusão:</label>
+            <input type="date" id="dataFim" ng-model="cursoController.dataFim" required />
+          </div>
+          <div>
+            <label for="duracao">Duração:</label>
+            <input type="text" id="duracao" ng-model="cursoController.duracao" required placeholder="Insira a duração do curso (semanas)" />
+          </div>
+          <div>
+            <label for="descricaoCurso">Descrição:</label>
+            <textarea ng-model="cursoController.descricaoCurso"
+              id="descricaoCurso"
+              cols="30"
+              rows="10"  placeholder="Insira sua descrição aqui..."
+            ></textarea>
+          </div>
+          <div class="button">
+            <button type="submit">Cadastrar <i class="fas fa-check"></i></button>
+        </form>  
+      </div>
+      <div>
+        <h1 class="lista">Lista de Cursos</h1>
+        <input type="search" placeholder="buscar por nome..." ng-model="search">
+        <table cellspacing="1" bgcolor="#00008b">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Duração</th>
+              <th>Data de Início</th>
+              <th>Data de Término</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr bgcolor="#ffffff" ng-repeat="curso in cursoController.cursos | filter: ({nome: search}) track by $index">
+              <td>{{curso.nome}}</td>
+              <td>{{curso.duracao}}</td>
+              <td>{{curso.dataInicio | date: 'dd/MM/yyyy'}}</td>
+              <td>{{curso.dataFim | date: 'dd/MM/yyyy'}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    
+      <footer>
+        <p>2021© Copyright. Todos os Direitos Reservados.</p>
+        <p>
+          Aplicação desenvolvida com ❤️ por
+          <a
+            href="https://github.com/kmandzzz"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Amanda Oliveira
+          </a>
+        </p>
+      </footer>
+      </footer>
+    
+
+  
+</html>
